@@ -7,5 +7,20 @@ El _*MakeSpan*_ para una organización de trabajo en particular se compone del t
 
 El FSSP se resume a determinar la permutación optima para minimizar el _MakeSpan_, es decir, minimizar la suma del tiempo en el que se completa cada trabajo. Con 2 máquinas, el problema se puede resolver en un tiempo _ø(nlogn)_ usando el algoritmo de _Johnson_, sin embargo, para más de 2 máquinas, el problema se convierte en _NP Hard_. 
 
+# Datos del problema
+_n:_  Número total de trabajos a programar
 
-![funcObjective](https://user-images.githubusercontent.com/56168289/160265631-2eac7753-a422-4dcf-b82a-1eed28dd2bf8.gif)
+_m:_  Número de máquinas en el sistema
+
+_Wj:_ Peso del trabajo _j_, _j = 1, 2,..., n_
+
+_Pi,j:_  Tiempo de procesamiento del trabajo _j, j = 1, 2,..., n_, en la máquina _i, i = 1, 2,..., m_
+
+_Ci,j:_  Tiempo de finalización del trabajo _j, j = 1, 2,..., n_, en la máquina _i, i = 1, 2,..., m_
+
+_Cj:_  Tiempo de finalización del trabajo _j, j = 1, 2,..., n_, en la última máquina _( = C m,j)_
+
+# Función Objetivo
+
+![objFunction](https://user-images.githubusercontent.com/56168289/160326128-09805bfd-a54d-4067-9d44-83431d6d2835.png)
+
