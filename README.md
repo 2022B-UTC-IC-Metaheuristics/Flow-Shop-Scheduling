@@ -76,7 +76,7 @@ Su aplicación es amplia:
 
  ![EjemploFSS](https://user-images.githubusercontent.com/56168289/160938652-5fa3ea8b-89a2-4a4b-abee-2bdf0da8e2dd.png)
 
-# Iteraciones
+# Instancias
 50
 
 100
