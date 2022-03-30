@@ -24,3 +24,19 @@ _Cj:_  Tiempo de finalización del trabajo _j, j = 1, 2,..., n_, en la última m
 
 ![objFunction](https://user-images.githubusercontent.com/56168289/160326128-09805bfd-a54d-4067-9d44-83431d6d2835.png)
 
+
+# Aplicaciones
+
+Su aplicación es amplia:
+
+  → para programar el despacho de vuelos en aeropuertos
+  
+  → programar líneas de producción en un fábrica
+  
+  → programación de cirugías
+  
+  → reparación de equipos o maquinarias de un taller
+
+# Ejemplo
+
+ ![EjemploFSS](https://user-images.githubusercontent.com/56168289/160938652-5fa3ea8b-89a2-4a4b-abee-2bdf0da8e2dd.png)
