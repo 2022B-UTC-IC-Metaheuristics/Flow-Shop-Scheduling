@@ -25,8 +25,32 @@ El problema de Flow Shop es generalmente entendido como un problema de permutaci
 
 # Función Objetivo
 max f(S,x) EL objetivo al solucionar el problema es disminuir el tiempo total de procesamiento desde el inicio de la tarea 1 del trabajo 1 hasta la tarea n del trabajo n.
+
 ![objFunction](https://user-images.githubusercontent.com/56168289/160326128-09805bfd-a54d-4067-9d44-83431d6d2835.png)
 
+# Solución inicial
+
+_Aleatoria_
+
+ |  |  |  |  |
+ | :---: | :---: | :---: | :---: |
+ | 3 | 1 | 4 | 2 |
+ 
+ # Solución Vecina
+ 
+ _Intercambio de orden de trabajos_
+ 
+ Inicial:
+ 
+ |  |  |  |  |
+ | :---: | :---: | :---: | :---: |
+ | 3 | 1 | 4 | 2 |
+ 
+ Vecina:
+ 
+ |  |  |  |  |
+ | :---: | :---: | :---: | :---: |
+ | 2 | 1 | 4 | 3 |
 
 # Aplicaciones
 
