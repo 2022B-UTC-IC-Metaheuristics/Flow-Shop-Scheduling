@@ -39,4 +39,12 @@ Su aplicación es amplia:
 
 # Ejemplo
 
+| Trabajos |  M1  |  M2  |  M3  |  M4  |
+| :---: | :---: | :---: | :---: | :---: |
+| Trabajo 1 |  5  |  4  |  4  |  3  |
+| Trabajo 2 |  5  |  4  |  4  |  6  |
+| Trabajo 3 |  3  |  2  |  3  |  3  |
+| Trabajo 4 |  6  |  4  |  4  |  2  |
+| Trabajo 5 |  3  |  4  |  1  |  5  |
+
  ![EjemploFSS](https://user-images.githubusercontent.com/56168289/160938652-5fa3ea8b-89a2-4a4b-abee-2bdf0da8e2dd.png)
