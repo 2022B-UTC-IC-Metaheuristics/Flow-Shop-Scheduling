@@ -1,4 +1,4 @@
-# Flow-Shop-Scheduling-
+# Flow-Shop-Scheduling
 Es un problema combinacional en el que se necesita organizar el procesamiento de un conjunto de trabajos divididos en operaciones y cada operación se lleva a cabo en un recurso compartido.
 En el FSS (Flow Shop Scheduling) se dan tiempos _Pkj_ para cada trabajo _j_ en cada máquina _k_ y una secuencia de trabajo _S=(s1,s2,...,sn)_ donde _n_ trabajos _(j = 1,2,...,n)_ serán procesados por _m_ máquinas _(k = 1,2,...,m)_ por lo que el objetivo de FSSP es encontrar un
 orden de secuencia para el procesamiento de operaciones con el valor mínimo para el *_MakeSpan._*
@@ -20,8 +20,11 @@ _Ci,j:_  Tiempo de finalización del trabajo _j, j = 1, 2,..., n_, en la máquin
 
 _Cj:_  Tiempo de finalización del trabajo _j, j = 1, 2,..., n_, en la última máquina _( = C m,j)_
 
-# Función Objetivo
+# Modelo
+El problema de Flow Shop es generalmente entendido como un problema de permutaciones. El retraso entre el inicio de una tarea y otro es:
 
+# Función Objetivo
+max f(S,x) EL objetivo al solucionar el problema es disminuir el tiempo total de procesamiento desde el inicio de la tarea 1 del trabajo 1 hasta la tarea n del trabajo n.
 ![objFunction](https://user-images.githubusercontent.com/56168289/160326128-09805bfd-a54d-4067-9d44-83431d6d2835.png)
 
 
@@ -48,3 +51,10 @@ Su aplicación es amplia:
 | Trabajo 5 |  3  |  4  |  1  |  5  |
 
  ![EjemploFSS](https://user-images.githubusercontent.com/56168289/160938652-5fa3ea8b-89a2-4a4b-abee-2bdf0da8e2dd.png)
+
+# Iteraciones
+50
+
+100
+
+500
