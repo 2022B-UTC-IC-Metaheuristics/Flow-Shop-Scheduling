@@ -91,6 +91,37 @@ Resultado optimo obtenido, minimizando el tiempo de procesamiento de los trabajo
 | :---: | :---: | :---: |
 |1|3|2|
 
+# Generación de solución Vecina
+
+```python
+		
+		def solucionVecina(self,state,t=1):
+    index=list(range(len(state)))
+    random.shuffle(index)
+    a, b = index.pop(), index.pop()
+    newSolution=list(state)
+    newSolution[a], newSolution[b] = newSolution[b], newSolution[a]
+    return tuple(newSolution)
+		
+		```
+
+# Función de Costo
+
+```python
+ def makespan(self,state):
+    temp=[]
+    for i in state:
+      temp.append(np.array(self.d_jobs[i]))
+    cost=np.array(temp)
+    for i in range(self.d_process):
+      for j in range(self.n_jobs):
+        temp=cost[0:j+1,0:i+1].copy()
+        temp[-1][-1]=0
+        cost[j][i]+=np.max(temp)
+    return cost[-1][-1]
+
+```
+
 # Instancias
 ## Instancia 1
 ## 5 Trabajos
