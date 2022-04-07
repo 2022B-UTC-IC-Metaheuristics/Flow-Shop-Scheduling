@@ -28,6 +28,9 @@ max f(S,x) EL objetivo al solucionar el problema es disminuir el tiempo total de
 
 ![objFunction](https://user-images.githubusercontent.com/56168289/160326128-09805bfd-a54d-4067-9d44-83431d6d2835.png)
 
+# Representación de la solución 
+La representación de dato usada fue directa, un arreglo de enteros que representan la secuencia de los trabajos a realizar que minimiza el tiempo de procesamiento. El arreglo sera tan grande como cantidad de trabajos tenga el problema.
+
 # Solución inicial
 
 _Aleatoria_
@@ -100,6 +103,7 @@ Resultado optimo obtenido, minimizando el tiempo de procesamiento de los trabajo
 | Trabajo 4 |  6  |  4  |  4  |  2  |
 | Trabajo 5 |  3  |  4  |  1  |  5  |
 
+## Instancia 2
 ## 50 Trabajos
 |Instancia 2|M1|M2|M3|M4|
 | :---: | :---: | :---: | :---: | :---: |
