@@ -95,7 +95,7 @@ Resultado optimo obtenido, minimizando el tiempo de procesamiento de los trabajo
 
 ```python
 		
-		def solucionVecina(self,state,t=1):
+def solucionVecina(self,state,t=1):
     index=list(range(len(state)))
     random.shuffle(index)
     a, b = index.pop(), index.pop()
@@ -103,12 +103,12 @@ Resultado optimo obtenido, minimizando el tiempo de procesamiento de los trabajo
     newSolution[a], newSolution[b] = newSolution[b], newSolution[a]
     return tuple(newSolution)
 		
-		```
+```
 
 # Función de Costo
 
 ```python
- def makespan(self,state):
+def makespan(self,state):
     temp=[]
     for i in state:
       temp.append(np.array(self.d_jobs[i]))
