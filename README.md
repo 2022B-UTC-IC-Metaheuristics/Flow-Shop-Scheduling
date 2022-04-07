@@ -28,29 +28,33 @@ max f(S,x) EL objetivo al solucionar el problema es disminuir el tiempo total de
 
 ![objFunction](https://user-images.githubusercontent.com/56168289/160326128-09805bfd-a54d-4067-9d44-83431d6d2835.png)
 
+# Representación de la solución 
+La representación de dato usada fue directa, un arreglo de enteros que representan la secuencia de los trabajos a realizar que minimiza el tiempo de procesamiento. El arreglo sera tan grande como cantidad de trabajos tenga el problema.
+
 # Solución inicial
 
 _Aleatoria_
-
- |  |  |  |  |
- | :---: | :---: | :---: | :---: |
- | 3 | 1 | 4 | 2 |
+La solución inicial que se propone esta ordenada de forma aleatoria, para n trabajos.
+ |  |  |  |  |  |
+ | :---: | :---: | :---: | :---: | :---: |
+ | 2 | 1 | n | n-1 | ... |
  
  # Solución Vecina
  
- _Intercambio de orden de trabajos_
+ _Intercambio de orden de trabajos, mediante permutaciones_
  
  Inicial:
  
- |  |  |  |  |
- | :---: | :---: | :---: | :---: |
- | 3 | 1 | 4 | 2 |
+ |  |  |  |  |  |
+ | :---: | :---: | :---: | :---: | :---: |
+ | _2_ | 1 | n | _n-1_ | ... |
  
  Vecina:
+ Solución obtenida a partir de la permutación de dos elementos diferentes entre sí del arreglo, 
  
- |  |  |  |  |
- | :---: | :---: | :---: | :---: |
- | 2 | 1 | 4 | 3 |
+ |  |  |  |  |  |
+ | :---: | :---: | :---: | :---: | :---: |
+ | __n-1__ | 1 | n | __2__ | ... |
 
 # Aplicaciones
 
@@ -65,6 +69,31 @@ Su aplicación es amplia:
   → reparación de equipos o maquinarias de un taller
 
 # Ejemplo
+|Trabajos|M1|M2|M3|
+| :---: | :---: | :---: | :---: |
+|T1|5|8|8|
+|T2|10|15|5|
+|T3|6|5|7|
+|T4|8|7|9|
+
+## Vector inicial propuesto 
+Se genera un vector inicial de orden aleatorio 
+|  |   |   |
+| :---: | :---: | :---: |
+|2|1|3|
+## Ilustración de la solución optima 
+![image](https://user-images.githubusercontent.com/93891210/162112069-e758b97f-e035-4961-8808-46f18bf2c857.png)
+
+
+## Vector resultado 
+Resultado optimo obtenido, minimizando el tiempo de procesamiento de los trabajos.
+|  |   |   |
+| :---: | :---: | :---: |
+|1|3|2|
+
+# Instancias
+## Instancia 1
+## 5 Trabajos
 
 | Trabajos |  M1  |  M2  |  M3  |  M4  |
 | :---: | :---: | :---: | :---: | :---: |
@@ -74,16 +103,63 @@ Su aplicación es amplia:
 | Trabajo 4 |  6  |  4  |  4  |  2  |
 | Trabajo 5 |  3  |  4  |  1  |  5  |
 
- ![EjemploFSS](https://user-images.githubusercontent.com/56168289/160938652-5fa3ea8b-89a2-4a4b-abee-2bdf0da8e2dd.png)
+## Instancia 2
+## 50 Trabajos
+|Instancia 2|M1|M2|M3|M4|
+| :---: | :---: | :---: | :---: | :---: |
+|T1|269|428|249|135|
+|T2|187|276|177|293|
+|T3|356|263|253|218|
+|T4|281|480|285|98|
+|T5|305|346|49|133|
+|T6|274|27|104|254|
+|T7|191|420|167|61|
+|T8|352|333|201|110|
+|T9|24|126|255|218|
+|T10|135|205|105|67|
+|T11|62|388|92|12|
+|T12|228|120|130|173|
+|T13|8|305|280|161|
+|T14|218|227|63|101|
+|T15|278|485|176|202|
+|T16|253|362|277|212|
+|T17|172|22|36|134|
+|T18|164|534|226|250|
+|T19|375|257|32|293|
+|T20|206|137|247|19|
+|T21|339|395|184|179|
+|T22|356|461|50|120|
+|T23|153|322|154|209|
+|T24|65|349|300|189|
+|T25|83|355|289|238|
+|T26|4|293|132|93|
+|T27|248|354|244|81|
+|T28|376|265|158|125|
+|T29|95|261|242|46|
+|T30|93|517|199|188|
+|T31|273|446|104|253|
+|T32|6|182|26|73|
+|T33|22|31|55|256|
+|T34|328|115|143|304|
+|T35|20|415|112|233|
+|T36|372|492|268|96|
+|T37|375|66|208|187|
+|T38|253|487|324|102|
+|T39|360|20|48|138|
+|T40|196|278|40|33|
+|T41|48|407|180|254|
+|T42|328|537|318|36|
+|T43|239|208|164|252|
+|T44|152|198|124|41|
+|T45|130|358|298|199|
+|T46|12|165|238|97|
+|T47|294|375|78|79|
+|T48|34|249|264|194|
+|T49|383|174|264|71|
+|T50|8|121|194|296|
 
-# Instancias
-2
-
-5
-
-10
-
-1000
+## Instancia 3
+## 1000 tabajos
 
 | Trabajos |  M1  |  M2  |  M3  |  M4  |
 | :---: | :---: | :---: | :---: | :---: |
