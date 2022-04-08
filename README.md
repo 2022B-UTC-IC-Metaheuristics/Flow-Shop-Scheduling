@@ -69,12 +69,11 @@ Su aplicación es amplia:
   → reparación de equipos o maquinarias de un taller
 
 # Ejemplo
-|Trabajos|M1|M2|M3|
-| :---: | :---: | :---: | :---: |
-|T1|5|8|8|
-|T2|10|15|5|
-|T3|6|5|7|
-|T4|8|7|9|
+|Trabajos|M1|M2|M3|M4|
+| :---: | :---: | :---: | :---: | :---: |
+|T1|5|10|6|8|
+|T2|8|15|5|7|
+|T3|8|5|7|9|
 
 ## Vector inicial propuesto 
 Se genera un vector inicial de orden aleatorio 
