@@ -84,11 +84,13 @@ Se genera un vector inicial de orden aleatorio
 ![image](https://user-images.githubusercontent.com/93891210/162112069-e758b97f-e035-4961-8808-46f18bf2c857.png)
 
 
-## Vector resultado 
-Resultado optimo obtenido, minimizando el tiempo de procesamiento de los trabajos.
-|  |   |   |
-| :---: | :---: | :---: |
-|1|3|2|
+
+## Resultados obtenidos
+Resultados del ejemplo
+|Instancias|Iteraciones | Resultado | Costo | Tiempo | Temperatura|
+| :---: | :---: | :---: | :---: | :---: | :---: |
+|3|61|1,3,2|48|0.0276|6|
+
 
 # Generación de solución Vecina
 
@@ -159,7 +161,7 @@ Las dos ultimas instancias de este problema se encuentran en la carpeta data.
 | Trabajo  ... |   ...   |   ...   |   ...   |   ...   |
 | Trabajo  1000  |   4   |   12   |   15   |   5   |
 
-# La lectura de los datos se realiza con la siguiente función.
+### La lectura de los datos se realiza con la siguiente función.
 ```python
 data = pandas.read_csv('/content/Instancia2.csv', header=None)
 intancia1 = np.array(data)
