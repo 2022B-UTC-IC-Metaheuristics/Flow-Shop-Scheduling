@@ -87,9 +87,9 @@ Se genera un vector inicial de orden aleatorio
 
 ## Resultados obtenidos
 Resultados del ejemplo
-|Instancias|Iteraciones | Resultado | Costo | Tiempo | Temperatura|
-| :---: | :---: | :---: | :---: | :---: | :---: |
-|3|61|1,3,2|48|0.0276|6|
+|Iteraciones | Resultado | Costo | Tiempo | Temperatura|
+| :---: | :---: | :---: | :---: | :---: |
+|61|1,3,2|48|0.0276|6|
 
 
 # Generación de solución Vecina
