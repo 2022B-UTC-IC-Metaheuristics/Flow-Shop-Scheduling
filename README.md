@@ -161,6 +161,23 @@ Las dos ultimas instancias de este problema se encuentran en la carpeta data.
 | Trabajo  ... |   ...   |   ...   |   ...   |   ...   |
 | Trabajo  1000  |   4   |   12   |   15   |   5   |
 
+
+## Instancia 4
+## 3000 tabajos
+
+| Trabajos |  M1  |  M2  |  M3  |  M4  |   M5  |  M6  |  M7  |  M8  |   M9  |  M10  |  M11  |  M12  |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Trabajo  1  |   3   |   14   |   11   |   1   |
+
+| Trabajo  1 |128|487|58|96|346|352|209|86|21|267|73|182|
+| Trabajo  2 |272|175|306|112|243|465|182|209|356|482|347|175|
+| Trabajo  3 |11|122|135|240|74|496|17|259|262|66|384|403|
+| Trabajo  4 |36|153|177|11|363|99|2|251|231|84|370|214|
+| Trabajo  ... |...|...|...|...|...|...|...|...|...|...|...|...|
+| Trabajo  3000  |  79|372|48|281|52|137|91|280|358|204|350|282|
+
+
+
 ### La lectura de los datos se realiza con la siguiente función.
 ```python
 data = pandas.read_csv('/content/Instancia2.csv', header=None)
