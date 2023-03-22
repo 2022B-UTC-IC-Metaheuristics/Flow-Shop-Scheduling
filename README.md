@@ -8,25 +8,59 @@ El _*MakeSpan*_ para una organización de trabajo en particular se compone del t
 El FSSP se resume a determinar la permutación optima para minimizar el _MakeSpan_, es decir, minimizar la suma del tiempo en el que se completa cada trabajo. Con 2 máquinas, el problema se puede resolver en un tiempo _ø(nlogn)_ usando el algoritmo de _Johnson_, sin embargo, para más de 2 máquinas, el problema se convierte en _NP Hard_. 
 
 # Datos del problema
-_n:_  Número total de trabajos a programar
+$n$ :  Número total de trabajos
 
-_m:_  Número de máquinas en el sistema
+$m$ :  Número de máquinas
 
-_Wj:_ Peso del trabajo _j_, _j = 1, 2,..., n_
+$W_j$ Peso del trabajo $j$, $j = 1, 2,..., n$
 
-_Pi,j:_  Tiempo de procesamiento del trabajo _j, j = 1, 2,..., n_, en la máquina _i, i = 1, 2,..., m_
+# Variables
 
-_Ci,j:_  Tiempo de finalización del trabajo _j, j = 1, 2,..., n_, en la máquina _i, i = 1, 2,..., m_
+$P_{ij}$ : Tiempo de procesamiento. Indica el tiempo requerido para procesar el trabajo $i$ en la máquina $j$.
 
-_Cj:_  Tiempo de finalización del trabajo _j, j = 1, 2,..., n_, en la última máquina _( = C m,j)_
+$S_{ikj} $ : Tiempo de configuración de un trabajo $i$ a un trabajo $k$ en la máquina $j$ ($i = 0$ se refiere al tiempo de configuración inicial del trabajo programado).
+
+$C_{i,j}$ : Tiempo de finalización del trabajo $i$ en la máquina $j$.
+
+$X_{ik}$ : Si el trabajo $i$ es procesado antes que el trabajo $k$, es igual a $1$; se otra forma, es igual a $0$.
+
 
 # Modelo
-El problema de Flow Shop es generalmente entendido como un problema de permutaciones. El retraso entre el inicio de una tarea y otro es:
+El problema de Flow Shop es generalmente entendido como un problema de permutaciones.
 
 # Función Objetivo
-max f(S,x) EL objetivo al solucionar el problema es disminuir el tiempo total de procesamiento desde el inicio de la tarea 1 del trabajo 1 hasta la tarea n del trabajo n.
+El objetivo del problema es disminuir el tiempo total de procesamiento desde el inicio de la tarea 1 del trabajo 1 hasta la tarea n del trabajo n.
+$$ Minimize \sum_{j=1}^{n} w_j C_j^2$$
 
-![objFunction](https://user-images.githubusercontent.com/56168289/160326128-09805bfd-a54d-4067-9d44-83431d6d2835.png)
+# Restricciones
+Garantizar que todos los trabajos han sido asignados y que el tiempo de completado del trabajo $i$ en la máquina $1$ es al menos tan grande como el tiempo de procesamiento de ese trabajo en la máquina:
+
+$p_{i1} \geq  c_{i1}; i=1,...,n.$
+
+El trabajo $j$ no puede empezar en la máquina $j$ a menos que haya finalizado en la máquina $j-1$. La restricción 2 garantiza que el tiempo de completado del trabajo $i$ en la máquina $j$ debe ser al menos tan grande ocmo el tiempo de procesamiendo en la máquina $j$, uno más grande que el tiempo de completado en la máquina $j-1$.
+
+$p_{i1} + c_i [j-1] \geq c_{ij}, i=1,...,n; j=1,...,m. $
+
+Las restricciones 3 y 4 aseguran que solo hay una restricción para cada secuencia de trabajos. Este caso muestra la relación entre la precedencia y latencia entre trabajos.
+
+$c_{ij} - c_{kj} + Mx_{ik} \geq s_{kij} + p_{ij}$
+
+$c_{ij} - c_{kj} + M[1 - x_{ik}] \geq s_{kij} + p_{ij}$
+
+donde $k \gt i \geq 1$ y $i=1,...,n;k=1,...,n; j=1,...,m. $
+También, $M$ es un número muy grande.
+
+Las restricciones 5 y 6 garantizan que solo un trabajo puede ser seguido de otro trabajo en cada planificación:
+
+$\sum_{i=1}^{n} x_{ik}=1; k = 1,2,...,n$ para $i \ne k,$
+
+$\sum_{k=1}^{n} x_{ik}; k = 1,2,...,n$ para $i \ne k.$
+
+# Suposiciones
+1. Hay un cierto numero de trabajos que puede ser asignado a una estacion.
+2. Cada operacion es realizada en su propia maquina.
+3. El tiempo de cada trabajo esta determinado.
+4. Los prerequisitos para cada trabajo han sido determinados. Por lo tanto, una tarea es ejecutable cuando su prerequisito ha sido completamente completado.
 
 # Representación de la solución 
 La representación de dato usada fue directa, un arreglo de enteros que representan la secuencia de los trabajos a realizar que minimiza el tiempo de procesamiento. El arreglo sera tan grande como cantidad de trabajos tenga el problema.
