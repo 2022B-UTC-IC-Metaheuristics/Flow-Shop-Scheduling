@@ -1,11 +1,11 @@
 # Flow-Shop-Scheduling
 Es un problema combinacional en el que se necesita organizar el procesamiento de un conjunto de trabajos divididos en operaciones y cada operación se lleva a cabo en un recurso compartido.
-En el FSS (Flow Shop Scheduling) se dan tiempos _Pkj_ para cada trabajo _j_ en cada máquina _k_ y una secuencia de trabajo _S=(s1,s2,...,sn)_ donde _n_ trabajos _(j = 1,2,...,n)_ serán procesados por _m_ máquinas _(k = 1,2,...,m)_ por lo que el objetivo de FSSP es encontrar un
-orden de secuencia para el procesamiento de operaciones con el valor mínimo para el *_MakeSpan._*
+El objetivo de FSSP es encontrar un
+orden de secuencia para el procesamiento de operaciones con el valor mínimo para el *_MakeSpan_*, es decir, minimizar la suma del tiempo en el que se completa cada trabajo.
 
 El _*MakeSpan*_ para una organización de trabajo en particular se compone del total tiempo transcurrido desde el comienzo del primer trabajo hasta el término del último trabajo. El *_MakeSpan_* es por lo tanto un característica de todo el problema.
 
-El FSSP se resume a determinar la permutación optima para minimizar el _MakeSpan_, es decir, minimizar la suma del tiempo en el que se completa cada trabajo. Con 2 máquinas, el problema se puede resolver en un tiempo _ø(nlogn)_ usando el algoritmo de _Johnson_, sin embargo, para más de 2 máquinas, el problema se convierte en _NP Hard_. 
+Con 2 máquinas, el problema se puede resolver en un tiempo _ø(nlogn)_ usando el algoritmo de _Johnson_, sin embargo, para más de 2 máquinas, el problema se convierte en _NP Hard_. 
 
 # Datos del problema
 $n$ :  Número total de trabajos
@@ -36,26 +36,26 @@ $ Minimize \sum_{j=1}^{n} w_j C_j^2 $
 # Restricciones
 Garantizar que todos los trabajos han sido asignados y que el tiempo de completado del trabajo $i$ en la máquina $1$ es al menos tan grande como el tiempo de procesamiento de ese trabajo en la máquina:
 
-$p_{i1} \geq  c_{i1}; i=1,...,n.$
+$p_{i1} \geq  c_{i1}; i=1,...,n. (1)$
 
 El trabajo $j$ no puede empezar en la máquina $j$ a menos que haya finalizado en la máquina $j-1$. La restricción 2 garantiza que el tiempo de completado del trabajo $i$ en la máquina $j$ debe ser al menos tan grande ocmo el tiempo de procesamiendo en la máquina $j$, uno más grande que el tiempo de completado en la máquina $j-1$.
 
-$p_{i1} + c_i [j-1] \geq c_{ij}, i=1,...,n; j=1,...,m. $
+$p_{i1} + c_i [j-1] \geq c_{ij}, i=1,...,n; j=1,...,m. (2)$
 
 Las restricciones 3 y 4 aseguran que solo hay una restricción para cada secuencia de trabajos. Este caso muestra la relación entre la precedencia y latencia entre trabajos.
 
-$c_{ij} - c_{kj} + Mx_{ik} \geq s_{kij} + p_{ij}$
+$c_{ij} - c_{kj} + Mx_{ik} \geq s_{kij} + p_{ij} (3)$
 
-$c_{ij} - c_{kj} + M[1 - x_{ik}] \geq s_{kij} + p_{ij}$
+$c_{ij} - c_{kj} + M[1 - x_{ik}] \geq s_{kij} + p_{ij} (4)$
 
 donde $k \gt i \geq 1$ y $i=1,...,n;k=1,...,n; j=1,...,m. $
 También, $M$ es un número muy grande.
 
 Las restricciones 5 y 6 garantizan que solo un trabajo puede ser seguido de otro trabajo en cada planificación:
 
-$\sum_{i=1}^{n} x_{ik}=1; k = 1,2,...,n$ para $i \ne k,$
+$\sum_{i=1}^{n} x_{ik}=1; k = 1,2,...,n$ para $i \ne k,(5)$
 
-$\sum_{k=1}^{n} x_{ik}; k = 1,2,...,n$ para $i \ne k.$
+$\sum_{k=1}^{n} x_{ik}; k = 1,2,...,n$ para $i \ne k.(6)$
 
 # Suposiciones
 1. Hay un cierto numero de trabajos que puede ser asignado a una estacion.
