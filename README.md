@@ -157,8 +157,14 @@ def create_neighbor_solution(self, actual_solution):
 # Función de Costo
 
 ```python
-def makespan(self, n_jobs, n_machines, job_matrix):
-  #Inicializar 
+def makespan(matrix,solution):
+  #ordenar la matriz de acuerdo a la solucion
+  processing_times=[]
+  for i in solution:
+    processing_times.append(matrix[i])
+
+  n_jobs = len(matrix)
+  n_machines = len(matrix[0])
   completion_times = np.zeros((n_jobs, n_machines))
   job_order = np.zeros((n_jobs, n_machines), dtype=np.int32)
   start_times = np.zeros(n_machines)
@@ -167,19 +173,17 @@ def makespan(self, n_jobs, n_machines, job_matrix):
     for j in range(n_machines):
       # Si es la primera maquina, empieza en el tiempo 0
       if j == 0:
-          start_times[j] = completion_times[i-1,j] if i > 0 else 0
+        start_times[j] = completion_times[i-1,j] if i > 0 else 0
       else:
-          start_times[j] = max(completion_times[i,j-1], completion_times[i-1,j])
+        start_times[j] = max(completion_times[i,j-1], completion_times[i-1,j])
       # Actualiza el tiempo de completado y el orden de trabajo para el trabajo en la maquina actual
-      completion_times[i,j] = start_times[j] + job_matrix[i,j]
+      completion_times[i,j] = start_times[j] + processing_times[i][j]
       job_order[i,j] = i
 
-  #orden de trabajos ordenados basados en su tiempo de completado y la ultima maquina
   last_machine_times = completion_times[:, -1]
   job_order = job_order[np.argsort(last_machine_times)]
 
-  return completion_times[-1,-1], job_order.tolist()
-
+  return completion_times[-1,-1]
 ```
 
 # Instancias
