@@ -30,9 +30,10 @@ def flow_shop_scheduling(n_jobs, n_machines, processing_times):
     return completion_times[-1,-1], job_order.tolist()
 
 # Example usage
-n_jobs = 3
+n_jobs = 5
 n_machines = 4
-processing_times = np.array([[5,10,6,8], [8,15,5,7], [8,5,7,9]])
+#processing_times = np.array([[5,10,6,8], [8,15,5,7], [8,5,7,9]])
+processing_times = np.array([[5,4,4,3],[5,4,4,6],[3,2,3,3],[6,4,4,2], [3,4,1,5]])
 
 # Generate all possible permutations of job order
 job_orders = permutations(range(n_jobs))
