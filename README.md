@@ -1,9 +1,9 @@
 # Flow-Shop-Scheduling
-Es un problema combinacional en el que se necesita organizar el procesamiento de un conjunto de trabajos divididos en operaciones y cada operación se lleva a cabo en un recurso compartido.
-El objetivo de FSSP es encontrar un
-orden de secuencia para el procesamiento de operaciones con el valor mínimo para el *_MakeSpan_*, es decir, minimizar la suma del tiempo en el que se completa cada trabajo.
 
-El _*MakeSpan*_ para una organización de trabajo en particular se compone del total tiempo transcurrido desde el comienzo del primer trabajo hasta el término del último trabajo. El *_MakeSpan_* es por lo tanto un característica de todo el problema.
+## Definición del problema
+El problema de Flow-Shop-Scheduling (FSS) es un desafío de optimización en el ámbito de la gestión de operaciones y la planificación de la producción. En este problema, se trata de determinar el orden de procesamiento óptimo para un conjunto de trabajos en una serie de máquinas, conocidas como etapas o estaciones, de tal manera que se minimice el tiempo total de finalización de todos los trabajos. Cada trabajo debe pasar por todas las máquinas en el mismo orden, y una vez que comienza su procesamiento en una máquina, no puede interrumpirse hasta su finalización.
+
+El objetivo del FSS es encontrar una secuencia de trabajos que minimice el tiempo total necesario para completar todos los trabajos, conocido como el tiempo de flujo total. Esto implica optimizar el tiempo de finalización del último trabajo, lo que a menudo se denomina como la métrica *_MakeSpan_*. El FSS es un problema NP-duro, lo que significa que no se conoce un algoritmo que pueda resolverlo en tiempo polinomial para todas las instancias del problema, por lo que generalmente se utilizan enfoques heurísticos y algoritmos de búsqueda para encontrar soluciones aproximadas en un tiempo razonable.
 
 Con 2 máquinas, el problema se puede resolver en un tiempo _ø(nlogn)_ usando el algoritmo de _Johnson_, sin embargo, para más de 2 máquinas, el problema se convierte en _NP Hard_. 
 
