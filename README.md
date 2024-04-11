@@ -3,7 +3,7 @@
 ## Definición del problema
 El problema de Flow-Shop-Scheduling (FSS) es un desafío de optimización en el ámbito de la gestión de operaciones y la planificación de la producción. En este problema, se trata de determinar el orden de procesamiento óptimo para un conjunto de trabajos en una serie de máquinas, conocidas como etapas o estaciones, de tal manera que se minimice el tiempo total de finalización de todos los trabajos. Cada trabajo debe pasar por todas las máquinas en el mismo orden, y una vez que comienza su procesamiento en una máquina, no puede interrumpirse hasta su finalización.
 
-El objetivo del FSS es encontrar una secuencia de trabajos que minimice el tiempo total necesario para completar todos los trabajos, conocido como el tiempo de flujo total. Esto implica optimizar el tiempo de finalización del último trabajo, lo que a menudo se denomina como la métrica *_MakeSpan_*. El FSS es un problema NP-duro, lo que significa que no se conoce un algoritmo que pueda resolverlo en tiempo polinomial para todas las instancias del problema, por lo que generalmente se utilizan enfoques heurísticos y algoritmos de búsqueda para encontrar soluciones aproximadas en un tiempo razonable.
+El objetivo del FSS es encontrar una secuencia de trabajos que minimice el tiempo total necesario para completar todos los trabajos, conocido como el tiempo de flujo total. Esto implica optimizar el tiempo de finalización del último trabajo, lo que a menudo se denomina como la métrica $_MakeSpan_$. El FSS es un problema NP-duro, lo que significa que no se conoce un algoritmo que pueda resolverlo en tiempo polinomial para todas las instancias del problema, por lo que generalmente se utilizan enfoques heurísticos y algoritmos de búsqueda para encontrar soluciones aproximadas en un tiempo razonable.
 
 Con 2 máquinas, el problema se puede resolver en un tiempo _ø(nlogn)_ usando el algoritmo de _Johnson_, sin embargo, para más de 2 máquinas, el problema se convierte en _NP Hard_. 
 
@@ -18,7 +18,7 @@ $W_j$ Peso del trabajo $j$, $j = 1, 2,..., n$
 
 $P_{ij}$ : Tiempo de procesamiento. Indica el tiempo requerido para procesar el trabajo $i$ en la máquina $j$.
 
-$S_{ikj} $ : Tiempo de configuración de un trabajo $i$ a un trabajo $k$ en la máquina $j$ ($i = 0$ se refiere al tiempo de configuración inicial del trabajo programado).
+$S_{ikj}$ : Tiempo de configuración de un trabajo $i$ a un trabajo $k$ en la máquina $j$ ($i = 0$ se refiere al tiempo de configuración inicial del trabajo programado).
 
 $C_{i,j}$ : Tiempo de finalización del trabajo $i$ en la máquina $j$.
 
