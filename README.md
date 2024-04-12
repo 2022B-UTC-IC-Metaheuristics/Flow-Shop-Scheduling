@@ -129,61 +129,51 @@ Resultados del ejemplo
 
 # Generar la primera solución
 ```python
-def create_first_solution(self,n_jobs):
-  sol = np.arange(n_jobs)
-  np.random.shuffle(sol)
-  return sol
+def create_first_solution(self):
+return np.random.permutation(self.num_tasks)
 ```
 # Generación de solución Vecina
 
 ```python
 		
-def create_neighbor_solution(self, actual_solution):
-  neighbor = actual_solution.copy()
-  
-  swap1 = np.random.randint(len(actual_solution))
-  swap2 = 0
-  while(1):
-    swap2 = np.random.randint(len(actual_solution))
-    if swap1 != swap2: break
-  
-  copy = neighbor[swap1]
-  neighbor[swap1] = neighbor[swap2]
-  neighbor[swap2] = copy
-  return neighbor
+def create_neighbor_solution(self, solution):
+        neighbor = solution.copy()
+        swap1 = np.random.randint(len(solution))
+        swap2 = 0
+        while(1):
+            swap2 = np.random.randint(len(solution))
+            if swap1 != swap2: break
+        copy = neighbor[swap1]
+        neighbor[swap1] = neighbor[swap2]
+        neighbor[swap2] = copy
+        return neighbor
 		
 ```
 
 # Función de Costo
 
 ```python
-def makespan(matrix,solution):
-  #ordenar la matriz de acuerdo a la solucion
-  processing_times=[]
-  for i in solution:
-    processing_times.append(matrix[i])
-
-  n_jobs = len(matrix)
-  n_machines = len(matrix[0])
-  completion_times = np.zeros((n_jobs, n_machines))
-  job_order = np.zeros((n_jobs, n_machines), dtype=np.int32)
-  start_times = np.zeros(n_machines)
-
-  for i in range(n_jobs):
-    for j in range(n_machines):
-      # Si es la primera maquina, empieza en el tiempo 0
-      if j == 0:
-        start_times[j] = completion_times[i-1,j] if i > 0 else 0
-      else:
-        start_times[j] = max(completion_times[i,j-1], completion_times[i-1,j])
-      # Actualiza el tiempo de completado y el orden de trabajo para el trabajo en la maquina actual
-      completion_times[i,j] = start_times[j] + processing_times[i][j]
-      job_order[i,j] = i
-
-  last_machine_times = completion_times[:, -1]
-  job_order = job_order[np.argsort(last_machine_times)]
-
-  return completion_times[-1,-1]
+def makespan(self, matrix, solution):
+        # Ordenar la matriz de acuerdo a la solución
+        processing_times = [matrix[i] for i in solution]
+        n_jobs = len(matrix)
+        n_machines = len(matrix[0])
+        completion_times = np.zeros((n_jobs, n_machines))
+        job_order = np.zeros((n_jobs, n_machines), dtype=np.int32)
+        start_times = np.zeros(n_machines)
+        for i in range(n_jobs):
+            for j in range(n_machines):
+                # Si es la primera máquina, empieza en el tiempo 0
+                if j == 0:
+                    start_times[j] = completion_times[i-1, j] if i > 0 else 0
+                else:
+                    start_times[j] = max(completion_times[i, j-1], completion_times[i-1, j])
+                # Actualiza el tiempo de completado y el orden de trabajo para el trabajo en la máquina actual
+                completion_times[i, j] = start_times[j] + processing_times[i][j]
+                job_order[i, j] = i
+        last_machine_times = completion_times[:, -1]
+        job_order = job_order[np.argsort(last_machine_times)]
+        return completion_times[-1, -1]
 ```
 
 # Instancias
@@ -346,7 +336,24 @@ def makespan(matrix,solution):
 
 ### La lectura de los datos se realiza con la siguiente función.
 ```python
-data = pandas.read_csv('/content/Instancia2.csv', header=None)
-intancia1 = np.array(data)
+def read_cost_matrix_from_csv(self, filename):
+        with open(filename, 'r', encoding='utf-8-sig') as file:
+            reader = csv.reader(file)
+            cost_matrix = [list(map(int, row)) for row in reader]
+            self.num_tasks = len(cost_matrix)
+            self.num_machines = len(cost_matrix[0])
+        return cost_matrix
+
+```
+
+### Implementación.
+```python
+sa = SAnnealingFlowShop()
+cost_matrix = sa.read_cost_matrix_from_csv('C:\\Users\\jairo\\Documents\\UTM\\Decimo\\Metaheurística\\RECOCIDO_SIMULADO_COP\\Instancia1.csv')
+best_solution, best_cost, elapsed_time = sa.fit(cost_matrix)
+best_solution = [task + 1 for task in best_solution]
+print("Mejor solución:", best_solution)
+print("Costo:", best_cost)
+print("Tiempo:", elapsed_time)
 
 ```
