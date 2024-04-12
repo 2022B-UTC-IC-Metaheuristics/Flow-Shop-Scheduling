@@ -348,12 +348,19 @@ def read_cost_matrix_from_csv(self, filename):
 
 ### Implementación.
 ```python
+from SAnnealingFlowShop import SAnnealingFlowShop
+import matplotlib.pyplot as plt
+import time
+from tabulate import tabulate
+
 sa = SAnnealingFlowShop()
-cost_matrix = sa.read_cost_matrix_from_csv('C:\\Users\\jairo\\Documents\\UTM\\Decimo\\Metaheurística\\RECOCIDO_SIMULADO_COP\\Instancia1.csv')
-best_solution, best_cost, elapsed_time = sa.fit(cost_matrix)
+cost_matrix = sa.read_cost_matrix_from_csv('C:\\Users\\jairo\\Documents\\UTM\\Decimo\\Metaheurística\\RECOCIDO_SIMULADO_COP\\prueba.csv')
+best_solution, best_cost, elapsed_time, iterations, final_temperature = sa.fit(cost_matrix)
 best_solution = [task + 1 for task in best_solution]
-print("Mejor solución:", best_solution)
-print("Costo:", best_cost)
-print("Tiempo:", elapsed_time)
+elapsed_time_formatted = f"{time.strftime('%H:%M:%S', time.gmtime(elapsed_time))}:{str(elapsed_time - int(elapsed_time))[2:5]}"
+data = []
+data.append([iterations, best_solution, best_cost, elapsed_time_formatted, final_temperature])
+headers = ["Iteraciones", "Mejor Solución", "Costo", "Tiempo", "Temperatura Final"]
+print(tabulate(data, headers=headers, tablefmt="grid"))
 
 ```
