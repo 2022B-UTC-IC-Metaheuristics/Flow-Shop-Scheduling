@@ -208,7 +208,7 @@ def makespan(self, matrix, solution):
 |1620|[8, 3, 1, 7, 5, 11, 9, 4, 2, 6, 10]|7038|00:00:00:122|0.1|
 
 ## [Instancia 2](./instancias/instancias_or_library/Instancia13x4.csv)
-## 13 Trabajos con 4 Máquinas
+### 13 Trabajos con 4 Máquinas
 
   | Trabajos |  M1  |  M2  |  M3  |  M4  |
 | :---: | :---: | :---: | :---: | :---: |
@@ -226,8 +226,13 @@ def makespan(self, matrix, solution):
 |Trabajo|696|784|855|512|
 |Trabajo|302|512|221|345|
 
+### Resultados obtenidos
+|Iteraciones | Resultado | Costo | Tiempo | Temperatura|
+| :---: | :---: | :---: | :---: | :---: |
+|1620|[8, 12, 13, 7, 5, 11, 3, 1, 2, 9, 10, 6, 4]|7260|00:00:00:113|0.1|
+
 ## [Instancia 3](./instancias/instancias_or_library/Instancia30x10.csv)
-## 30 Trabajos con 10 Máquinas
+### 30 Trabajos con 10 Máquinas
 |Trabajos |  M1  |  M2  |  M3  |  M4  |   M5  |  M6  |  M7  |  M8  |   M9  |  M10  |
 | :---:|  :---:  |  :---:  |  :---:  |  :---:  |  :---:  |   :---:  |  :---:  |  :---:  |  :---:  |  :---: |
   | Trabajo | 54  |  2  |  2  | 75  | 39  | 97  | 70  |  5  | 40  | 16|
@@ -260,9 +265,14 @@ def makespan(self, matrix, solution):
   | Trabajo | 66  | 90  | 75  | 45  | 59  | 46  | 98  | 99  | 26  | 55|
   | Trabajo | 16  |  3  | 46  |  2  | 79  | 11  | 26  | 47  | 88  | 58|
   | Trabajo | 78  | 97  | 19  | 22  |  5  | 79  | 90  | 57  | 54  | 68|
+
+  ### Resultados obtenidos
+|Iteraciones | Resultado | Costo | Tiempo | Temperatura|
+| :---: | :---: | :---: | :---: | :---: |
+|1620|[15, 18, 24, 29, 22, 4, 14, 1, 23, 11, 26, 28, 16, 6, 13, 20, 2, 8, 3, 19, 10, 9, 7, 12, 25, 17, 30, 5, 21, 27]|2090|00:00:00:570|0.1|
   
 ## [Instancia 4](./instancias/instancias_or_library/Instancia75x20.csv)
-## 75 Trabajos con 20 Máquinas
+### 75 Trabajos con 20 Máquinas
 
 
 |Trabajos |  M1  |  M2  |  M3  |  M4  |   M5  |  M6  |  M7  |  M8  |   M9  |  M10  |  M11  |  M12  | M13  |  M14  |   M15  |  M16  |  M17  |  M18  |   M19  |  M20|
@@ -342,6 +352,11 @@ def makespan(self, matrix, solution):
   |Trabajo |  16  |  79  |  87  |  70  |  98  |  88  |  95  |  41  |   9  |  85 |  16 |  43 |   1 |  13 |  17 |  84 |  50 |  44 |  85 |  97 |
   |Trabajo |  94  |  97  |  78  |  63  |  27  |  77  |  98  |  19  |   7  |  93 |  88 |  43 |  59 |  64 |  86 |  16 |  37 |  36 |  56 |  48 |
   |Trabajo |  47  |  64  |  98  |  43  |  71  |  98  |  83  |  30  |  83  |  40 |  17 |  45 |  86 |  86 |  14 |  46 |   6 |  57 |  13 |  16 |
+
+  ### Resultados obtenidos
+|Iteraciones | Resultado | Costo | Tiempo | Temperatura|
+| :---: | :---: | :---: | :---: | :---: |
+|1620|[55, 24, 67, 60, 32, 28, 8, 19, 52, 42, 5, 50, 37, 57, 56, 64, 53, 26, 69, 70, 47, 65, 71, 6, 58, 51, 46, 21, 73, 61, 36, 34, 25, 41, 62, 33, 12, 11, 39, 66, 22, 27, 4, 40, 35, 72, 30, 2, 45, 20, 29, 54, 23, 68, 14, 49, 74, 9, 59, 7, 43, 44, 75, 13, 63, 1, 17, 15, 16, 3, 31, 38, 48, 10, 18]|5485|00:00:02:597|0.1|
 
 
 ### La lectura de los datos se realiza con la siguiente función.
