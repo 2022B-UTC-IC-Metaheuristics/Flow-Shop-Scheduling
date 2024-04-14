@@ -258,8 +258,8 @@ def makespan(self, matrix, solution):
   | Trabajo | 16  |  3  | 46  |  2  | 79  | 11  | 26  | 47  | 88  | 58|
   | Trabajo | 78  | 97  | 19  | 22  |  5  | 79  | 90  | 57  | 54  | 68|
   
-## [Instancia 4](./instancias/instancias_or_library/Instancia70x20.csv)
-## 70 Trabajos con 20 Máquinas
+## [Instancia 4](./instancias/instancias_or_library/Instancia75x20.csv)
+## 75 Trabajos con 20 Máquinas
 
 
 |Trabajos |  M1  |  M2  |  M3  |  M4  |   M5  |  M6  |  M7  |  M8  |   M9  |  M10  |  M11  |  M12  | M13  |  M14  |   M15  |  M16  |  M17  |  M18  |   M19  |  M20|
