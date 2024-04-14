@@ -36,28 +36,37 @@ $$
 $$
 
 # Restricciones
-Garantizar que todos los trabajos han sido asignados y que el tiempo de completado del trabajo $i$ en la máquina $1$ es al menos tan grande como el tiempo de procesamiento de ese trabajo en la máquina:
 
-$p_{i1} \geq  c_{i1}; i=1,...,n. (1)$
+## Asignación de Trabajos
 
-El trabajo $j$ no puede empezar en la máquina $j$ a menos que haya finalizado en la máquina $j-1$. La restricción 2 garantiza que el tiempo de completado del trabajo $i$ en la máquina $j$ debe ser al menos tan grande ocmo el tiempo de procesamiendo en la máquina $j$, uno más grande que el tiempo de completado en la máquina $j-1$.
+1. **Garantizar asignación de trabajos:**
+   Se asegura que todos los trabajos han sido asignados y que el tiempo de completado del trabajo $i$ en la máquina $1$ es al menos tan grande como el tiempo de procesamiento de ese trabajo en la máquina:
 
-$p_{i1} + c_i [j-1] \geq c_{ij}, i=1,...,n; j=1,...,m. (2)$
+   $$p_{i1} \geq  c_{i1}, \quad i = 1,...,n. \quad (1)$$
 
-Las restricciones 3 y 4 aseguran que solo hay una restricción para cada secuencia de trabajos. Este caso muestra la relación entre la precedencia y latencia entre trabajos.
+2. **Restricción de Precedencia:**
+   Los trabajos no pueden empezar en la máquina $j$ a menos que hayan finalizado en la máquina $j-1$. Esta restricción garantiza que el tiempo de completado del trabajo $i$ en la máquina $j$ debe ser al menos tan grande como el tiempo de procesamiento en la máquina $j$, uno más grande que el tiempo de completado en la máquina $j-1$:
 
-$c_{ij} - c_{kj} + Mx_{ik} \geq s_{kij} + p_{ij} (3)$
+   $$p_{ij} + c_i [j-1] \geq c_{ij}, \quad i = 1,...,n; \quad j = 1,...,m. \quad (2)$$
 
-$c_{ij} - c_{kj} + M[1 - x_{ik}] \geq s_{kij} + p_{ij} (4)$
+## Relación entre Trabajos
 
-donde $k \gt i \geq 1$ y $i=1,...,n;k=1,...,n; j=1,...,m. $
-También, $M$ es un número muy grande.
+3. **Relación de Precedencia y Latencia:**
+   Estas restricciones muestran la relación entre la precedencia y la latencia entre trabajos. Se garantiza que solo hay una restricción para cada secuencia de trabajos:
 
-Las restricciones 5 y 6 garantizan que solo un trabajo puede ser seguido de otro trabajo en cada planificación:
+   $$c_{ij} - c_{kj} + Mx_{ik} \geq s_{kij} + p_{ij}, \quad k > i \geq 1; \quad i = 1,...,n; \quad k = 1,...,n; \quad j = 1,...,m. \quad (3)$$
 
-$\sum_{i=1}^{n} x_{ik}=1; k = 1,2,...,n$ para $i \ne k,(5)$
+   $$c_{ij} - c_{kj} + M[1 - x_{ik}] \geq s_{kij} + p_{ij}, \quad k > i \geq 1; \quad i = 1,...,n; \quad k = 1,...,n; \quad j = 1,...,m. \quad (4)$$
 
-$\sum_{k=1}^{n} x_{ik}; k = 1,2,...,n$ para $i \ne k.(6)$
+   Donde $M$ es un número muy grande.
+
+4. **Restricción de Planificación:**
+   Estas restricciones garantizan que solo un trabajo puede ser seguido de otro trabajo en cada planificación:
+
+   $$\sum_{i=1}^{n} x_{ik} = 1, \quad k = 1,2,...,n, \quad \text{para } i \neq k, \quad (5)$$
+
+   $$\sum_{k=1}^{n} x_{ik} = 1, \quad k = 1,2,...,n, \quad \text{para } i \neq k. \quad (6)$$
+
 
 # Suposiciones
 1. Hay un cierto numero de trabajos que puede ser asignado a una estacion.
