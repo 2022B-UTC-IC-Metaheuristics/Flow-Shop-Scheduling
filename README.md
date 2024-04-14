@@ -184,7 +184,7 @@ def makespan(self, matrix, solution):
 
 # Instancias
 ## [Instancia 1](./instancias/instancias_or_library/Instancia11x5.csv)
-## 11 Trabajos
+## 11 Trabajos con 5 Máquinas
 
 
 
@@ -204,8 +204,8 @@ def makespan(self, matrix, solution):
 
 
 
-## Instancia 2
-## 13 Trabajos
+## [Instancia 2](./instancias/instancias_or_library/Instancia13x4.csv)
+## 13 Trabajos con 4 Máquinas
 
   | Trabajos |  M1  |  M2  |  M3  |  M4  |
 | :---: | :---: | :---: | :---: | :---: |
@@ -223,8 +223,8 @@ def makespan(self, matrix, solution):
 |Trabajo|696|784|855|512|
 |Trabajo|302|512|221|345|
 
-## Instancia 3
-## Reeves 30x10 type C instance
+## [Instancia 3](./instancias/instancias_or_library/Instancia30x10.csv)
+## 30 Trabajos con 10 Máquinas
 |Trabajos |  M1  |  M2  |  M3  |  M4  |   M5  |  M6  |  M7  |  M8  |   M9  |  M10  |
 | :---:|  :---:  |  :---:  |  :---:  |  :---:  |  :---:  |   :---:  |  :---:  |  :---:  |  :---:  |  :---: |
   | Trabajo | 54  |  2  |  2  | 75  | 39  | 97  | 70  |  5  | 40  | 16|
@@ -257,8 +257,9 @@ def makespan(self, matrix, solution):
   | Trabajo | 66  | 90  | 75  | 45  | 59  | 46  | 98  | 99  | 26  | 55|
   | Trabajo | 16  |  3  | 46  |  2  | 79  | 11  | 26  | 47  | 88  | 58|
   | Trabajo | 78  | 97  | 19  | 22  |  5  | 79  | 90  | 57  | 54  | 68|
-## Instancia 4
-## Reeves 75x20 type C instance  
+  
+## [Instancia 4](./instancias/instancias_or_library/Instancia70x20.csv)
+## 70 Trabajos con 20 Máquinas
 
 
 |Trabajos |  M1  |  M2  |  M3  |  M4  |   M5  |  M6  |  M7  |  M8  |   M9  |  M10  |  M11  |  M12  | M13  |  M14  |   M15  |  M16  |  M17  |  M18  |   M19  |  M20|
