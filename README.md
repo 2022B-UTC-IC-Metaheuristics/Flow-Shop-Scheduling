@@ -31,7 +31,9 @@ El problema de Flow Shop es generalmente entendido como un problema de permutaci
 # Función Objetivo
 El objetivo del problema es disminuir el tiempo total de procesamiento desde el inicio de la tarea 1 del trabajo 1 hasta la tarea n del trabajo n.
 
-$Minimize \sum_{j=1}^{n} w_j C_j^2$
+$$
+\text{Minimizar } \sum_{j=1}^{n} w_j C_j^2
+$$
 
 # Restricciones
 Garantizar que todos los trabajos han sido asignados y que el tiempo de completado del trabajo $i$ en la máquina $1$ es al menos tan grande como el tiempo de procesamiento de ese trabajo en la máquina:
