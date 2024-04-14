@@ -184,7 +184,7 @@ def makespan(self, matrix, solution):
 
 # Instancias
 ## [Instancia 1](./instancias/instancias_or_library/Instancia11x5.csv)
-## 11 Trabajos con 5 Máquinas
+### 11 Trabajos con 5 Máquinas
 
 
 
@@ -202,7 +202,10 @@ def makespan(self, matrix, solution):
 | Trabajo 10 |  896  |  896  |  214  |  358  | 259  |
 | Trabajo 11 |  532  |  302  |  501  |  765  | 988  |
 
-
+### Resultados obtenidos
+|Iteraciones | Resultado | Costo | Tiempo | Temperatura|
+| :---: | :---: | :---: | :---: | :---: |
+|1620|[8, 3, 1, 7, 5, 11, 9, 4, 2, 6, 10]|7038|00:00:00:122|0.1|
 
 ## [Instancia 2](./instancias/instancias_or_library/Instancia13x4.csv)
 ## 13 Trabajos con 4 Máquinas
