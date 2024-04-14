@@ -359,7 +359,7 @@ def makespan(self, matrix, solution):
 |1620|[55, 24, 67, 60, 32, 28, 8, 19, 52, 42, 5, 50, 37, 57, 56, 64, 53, 26, 69, 70, 47, 65, 71, 6, 58, 51, 46, 21, 73, 61, 36, 34, 25, 41, 62, 33, 12, 11, 39, 66, 22, 27, 4, 40, 35, 72, 30, 2, 45, 20, 29, 54, 23, 68, 14, 49, 74, 9, 59, 7, 43, 44, 75, 13, 63, 1, 17, 15, 16, 3, 31, 38, 48, 10, 18]|5485|00:00:02:597|0.1|
 
 
-### La lectura de los datos se realiza con la siguiente función.
+## La lectura de los datos se realiza con la siguiente función.
 ```python
 def read_cost_matrix_from_csv(self, filename):
         with open(filename, 'r', encoding='utf-8-sig') as file:
@@ -371,7 +371,7 @@ def read_cost_matrix_from_csv(self, filename):
 
 ```
 
-### Implementación.
+## Implementación.
 ```python
 from SAnnealingFlowShop import SAnnealingFlowShop
 import matplotlib.pyplot as plt
