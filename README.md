@@ -5,24 +5,19 @@ El problema de Flow-Shop-Scheduling (FSS) es un desafío de optimización en el 
 
 El objetivo del FSS es encontrar una secuencia de trabajos que minimice el tiempo total necesario para completar todos los trabajos, conocido como el tiempo de flujo total. Esto implica optimizar el tiempo de finalización del último trabajo, lo que a menudo se denomina como la métrica $MakeSpan$. El FSS es un problema NP-duro, lo que significa que no se conoce un algoritmo que pueda resolverlo en tiempo polinomial para todas las instancias del problema, por lo que generalmente se utilizan enfoques heurísticos y algoritmos de búsqueda para encontrar soluciones aproximadas en un tiempo razonable.
 
-Con 2 máquinas, el problema se puede resolver en un tiempo _ø(nlogn)_ usando el algoritmo de _Johnson_, sin embargo, para más de 2 máquinas, el problema se convierte en _NP Hard_. 
+Para el caso de 2 máquinas, el problema se puede resolver en un tiempo de _O(n log n)_ utilizando el algoritmo de _Johnson_. Sin embargo, para más de 2 máquinas, el problema se convierte en _NP Hard_.
 
-# Datos del problema
-$n$ :  Número total de trabajos
+## Datos del problema
+- $n$: Número total de trabajos.
+- $m$: Número de máquinas.
+- $W_j$: Peso del trabajo $j$, donde $j = 1, 2,..., n$.
 
-$m$ :  Número de máquinas
+## Variables
 
-$W_j$ Peso del trabajo $j$, $j = 1, 2,..., n$
-
-# Variables
-
-$P_{ij}$ : Tiempo de procesamiento. Indica el tiempo requerido para procesar el trabajo $i$ en la máquina $j$.
-
-$S_{ikj}$ : Tiempo de configuración de un trabajo $i$ a un trabajo $k$ en la máquina $j$ ($i = 0$ se refiere al tiempo de configuración inicial del trabajo programado).
-
-$C_{i,j}$ : Tiempo de finalización del trabajo $i$ en la máquina $j$.
-
-$X_{ik}$ : Si el trabajo $i$ es procesado antes que el trabajo $k$, es igual a $1$; se otra forma, es igual a $0$.
+- $P_{ij}$: Tiempo de procesamiento. Indica el tiempo requerido para procesar el trabajo $i$ en la máquina $j$.
+- $S_{ikj}$: Tiempo de configuración de un trabajo $i$ a un trabajo $k$ en la máquina $j$ ($i = 0$ se refiere al tiempo de configuración inicial del trabajo programado).
+- $C_{ij}$: Tiempo de finalización del trabajo $i$ en la máquina $j$.
+- $X_{ik}$: Si el trabajo $i$ es procesado antes que el trabajo $k$, es igual a $1$; de lo contrario, es igual a $0$.
 
 
 # Modelo
